@@ -23,5 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
  // Транзакции
  Route::get('/transactions', [TransactionController::class, 'index']);
  Route::post('/transactions', [TransactionController::class, 'store']);
- Route::put('/transactions/{transaction}', [TransactionController::class, 'update']);
- Route::delete('/transactions/{transaction}', [TransactionController::class, 'destroy']);
+ Route::delete('/transactions/{id}', [TransactionController::class, 'destroy']);
+ Route::put('/transactions/{id}', [TransactionController::class, 'update']);
+
+
