@@ -1,27 +1,22 @@
 import { createApp } from 'vue';
-import './bootstrap';
 import Alpine from 'alpinejs';
-
-
-import { createRouter, createWebHistory } from 'vue-router'; 
-import Transactions from './components/Transactions.vue';
-import TransactionsPage from './components/TransactionsPage.vue';
+import { createRouter, createWebHistory } from 'vue-router';
+import TransactionsTable from './components/TransactionsTable.vue';
+import Dashboard from './components/Dashboard.vue';
 
 const routes = [
-    { path: '/', component: Transactions },
-    { path: '/transactions', component: TransactionsPage }, 
+    { path: '/', component: Dashboard },
+  { path: '/transactions', component: TransactionsTable },
 ];
 
-
 const router = createRouter({
-    history: createWebHistory(),
-    routes,
+  history: createWebHistory(),
+  routes,
 });
 
-
 const app = createApp({});
-app.use(router); 
-app.mount('#app'); 
+app.use(router);
+app.mount('#app');
 
 window.Alpine = Alpine;
 
